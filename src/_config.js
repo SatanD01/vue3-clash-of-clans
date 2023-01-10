@@ -17,5 +17,5 @@ export const links = [
 ]
 
 export const app = {
-    title: 'LOGO'
+    title: 'CLASH OF CLANS'
 }

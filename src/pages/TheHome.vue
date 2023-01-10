@@ -1,12 +1,16 @@
 <template>
-  <h1>Home</h1>
-  <div class="card__wrapper" v-for="item in items" :key="item.id">
-    <app-card :name="`${item.lvl}`" :title="item.title"/>
+  <div class="md-body">
+    <div class="card__wrapper" v-for="item in items" :key="item.id">
+      <app-card :name="`${item.lvl}`" :title="item.title">
+        {{ item.descr }}
+      </app-card>
+    </div>
   </div>
 </template>
 
 <script>
 import TheCard from "@/components/UI/TheCard";
+
 export default {
   name: "TheHome",
   components: {"app-card": TheCard},
