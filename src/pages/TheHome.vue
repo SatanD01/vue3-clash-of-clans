@@ -1,7 +1,7 @@
 <template>
   <div class="md-body">
     <div class="card__wrapper" v-for="item in items" :key="item.id">
-      <app-card :img-url="item.img" :name="`${item.lvl}`" :title="item.title">
+      <app-card :img-url="item.img" :name="`${item.lvl}`" :title="item.title" :link="`/${item.alias}`">
         {{ item.descr }}
       </app-card>
     </div>
