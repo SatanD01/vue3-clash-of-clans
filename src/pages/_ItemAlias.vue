@@ -10,6 +10,9 @@
       <router-link to="/" class="btn btnPrimary">Home</router-link>
     </div>
   </div>
+  <div class="wrapper-person" v-else>
+    <h1>This page not found 404</h1>
+  </div>
 </template>
 
 <script>
