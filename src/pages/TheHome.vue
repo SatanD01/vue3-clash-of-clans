@@ -6,16 +6,10 @@
           {{ item.descr }}
         </template>
         <template v-slot:footer>
-          <div class="card-stats">
-            <div v-for="(stat, idx) in item.info" class="one-third" :key="idx">
-              <div class="stat-value">{{ stat.value }}</div>
-              <div class="stat"> {{ stat.title }}</div>
-            </div>
-          </div>
+          <TheStats :stats="item.info"/>
         </template>
       </app-card>
     </slide>
-
     <template #addons>
       <navigation/>
     </template>
@@ -27,10 +21,11 @@ import TheCard from "@/components/UI/TheCard";
 import item from '@/seeders/items.js'
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide, Navigation} from "vue3-carousel";
+import TheStats from "@/components/UI/TheStats";
 
 export default {
   name: "TheHome",
-  components: {"app-card": TheCard, Carousel, Slide, Navigation},
+  components: {TheStats, "app-card": TheCard, Carousel, Slide, Navigation},
   data() {
     return {
       items: item,

@@ -4,12 +4,7 @@
     <h1 style="color: #ffffff;" class="title">{{ item.title }}</h1>
     <p>{{ item.descr }}</p>
     <br>
-    <div class="card-stats" style="border-radius: 12px;">
-      <div v-for="(stat, idx) in item.info" class="one-third" :key="idx">
-        <div class="stat-value">{{ stat.value }}</div>
-        <div class="stat"> {{ stat.title }} </div>
-      </div>
-    </div>
+    <TheStats :stats="item.info"/>
     <br>
     <div>
       <router-link to="/" class="btn btnPrimary">Home</router-link>
@@ -19,9 +14,11 @@
 
 <script>
 import items from "@/seeders/items";
+import TheStats from "@/components/UI/TheStats";
 
 export default {
   name: "_ItemAlias",
+  components: {TheStats},
   data() {
     return {
       item: null,
@@ -37,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .wrapper-person{
-    text-align: center;
-  }
+.wrapper-person {
+  text-align: center;
+}
 </style>
